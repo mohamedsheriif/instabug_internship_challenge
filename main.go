@@ -15,8 +15,8 @@ type handler struct {
 }
 
 type row struct {
-	Id        int64
-	CreatedAt time.Time
+	Id        int64     `json:"id"`
+	CreatedAt time.Time `json:"created_at"`
 }
 
 func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {

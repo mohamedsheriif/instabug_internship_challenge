@@ -27,3 +27,9 @@ spec:
               value: {{ .Values.app.username }}
             - name: MYSQL_PASS
               value: "{{.Values.mysql.rootPassword}}"
+
+          resources:
+            limits:
+              cpu: 500m
+            requests:
+              cpu: 200m
