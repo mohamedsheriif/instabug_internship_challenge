@@ -11,4 +11,9 @@ mysql:
   image: mysql:latest
   rootPassword: mypassword
 
+instabugHpa:
+  minRelpicas: 1
+  maxReplicas: 10
+  averageUtilization: 60
+
 

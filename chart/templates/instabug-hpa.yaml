@@ -1,0 +1,19 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: instabug-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: instabug
+  minReplicas: {{.Values.instabugHpa.minRelpicas}}
+  maxReplicas: {{.Values.instabugHpa.maxReplicas}}
+
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: {{.Values.instabugHpa.averageUtilization}}

@@ -12,7 +12,7 @@ spec:
       labels:
         app: app
     spec:
-      restart: always
+      restartPolicy: Always
       containers:
         - name: app
           image: {{ .Values.app.image }}
@@ -27,4 +27,3 @@ spec:
               value: {{ .Values.app.username }}
             - name: MYSQL_PASS
               value: "{{.Values.mysql.rootPassword}}"
-
