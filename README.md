@@ -56,7 +56,8 @@ to open from browser : `kubectl port-forward service/instabug 9090:9090`
  * limited ports exposed
  * we can make docker uses https instead of tcp
 
-**7-the bug in the code**
+**7-the bug in the code**  
+
 I found the bug while testing the api on **post** it doesn't create new row and the problem is the row struct passed to json.marshal
 the fields in the struct must begin with upper case letter, and it began with lower case letter  
 solution:  
