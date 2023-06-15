@@ -44,7 +44,7 @@ to open from browser : `kubectl port-forward service/instabug 9090:9090`
 
 **7-the bug in the code**  
 
-I found the bug while testing the api on **post** it doesn't create new row and the problem is the row struct passed to json.marshal
+I found the bug while testing the api on **GET** it doesn't get the rows data and the problem is the row struct passed to json.marshal
 the fields in the struct must begin with upper case letter, and it began with lower case letter  
 solution:  
 ![image](https://github.com/mohamedsheriif/instabug_internship_challenge/assets/53241112/98953cf8-da82-4a5d-8281-aaff9f2cb26a)
