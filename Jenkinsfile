@@ -11,8 +11,8 @@ pipeline {
     stage('Push to Docker Hub') {
       steps {
        
-        withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', passwordVariable: 'shifo2000', usernameVariable: 'mohamedsherif20')]) {
-          sh 'docker login -u mohamedsherif20 -p shifo2000'
+        withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials')]) {
+          sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW'
         }
 
         sh 'docker tag instabug_intern:latest mohamedsherif20/instabug_intern:latest'
